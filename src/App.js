@@ -5,7 +5,13 @@ import {nanoid} from "nanoid"
 import Die from "./Die"
 
 export default function App() {
-  const [dice, setDice] = React.useState(allNewDice())
+
+  const [dice, setDice] = React.useState(allNewDice());
+  const [tenzies, setTenzies] = React.useState(false);
+
+  React.useEffect(() => {
+    console.log("Dice state changes")
+  }, [dice])
 
   function generateNewDie() {
     return {
